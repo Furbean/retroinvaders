@@ -251,7 +251,7 @@ g_enemyAnimDEC
 ; ------------------------------------------------------------------------------
 init_enemyData
                 ; Playfield index #
-                lda #$01
+                lda #$00
                 sta g_enemyBitMaskIndex
 
                 ; Generate animation INC speedcode at $5200
