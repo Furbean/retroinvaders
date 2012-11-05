@@ -45,5 +45,13 @@
             <Breakpoints />
             <FileOpen>False</FileOpen>
         </SourceFile>
+        <SourceFile>
+            <Name>anim_explosion_01.spt</Name>
+            <FileType>7</FileType>
+            <IncludeInBuild>True</IncludeInBuild>
+            <Regions />
+            <Breakpoints />
+            <FileOpen>False</FileOpen>
+        </SourceFile>
     </SourceFiles>
 </Project>
