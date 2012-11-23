@@ -33,4 +33,3 @@ bank_addr_tbl
         byte $80 ; 1
         byte $40 ; 2
         byte $00 ; 3
-

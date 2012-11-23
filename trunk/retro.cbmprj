@@ -15,27 +15,28 @@
         <PostBuildCommands />
     </BuildEvents>
     <BuildList>
+        <FileName>macros.asm</FileName>
         <FileName>startup.asm</FileName>
         <FileName>keyb.asm</FileName>
         <FileName>tables.asm</FileName>
         <FileName>sprite_data.asm</FileName>
         <FileName>sprite.asm</FileName>
         <FileName>membank.asm</FileName>
-        <FileName>debug.asm</FileName>
+        <FileName>output.asm</FileName>
     </BuildList>
     <DetermineBuildOrder>0</DetermineBuildOrder>
     <PaddingByte>234</PaddingByte>
     <SourceFiles>
         <SourceFile>
-            <Name>debug.asm</Name>
+            <Name>keyb.asm</Name>
             <FileType>2</FileType>
             <IncludeInBuild>True</IncludeInBuild>
             <Regions />
             <Breakpoints />
-            <FileOpen>False</FileOpen>
+            <FileOpen>True</FileOpen>
         </SourceFile>
         <SourceFile>
-            <Name>keyb.asm</Name>
+            <Name>macros.asm</Name>
             <FileType>2</FileType>
             <IncludeInBuild>True</IncludeInBuild>
             <Regions />
@@ -48,7 +49,15 @@
             <IncludeInBuild>True</IncludeInBuild>
             <Regions />
             <Breakpoints />
-            <FileOpen>False</FileOpen>
+            <FileOpen>True</FileOpen>
+        </SourceFile>
+        <SourceFile>
+            <Name>output.asm</Name>
+            <FileType>2</FileType>
+            <IncludeInBuild>True</IncludeInBuild>
+            <Regions />
+            <Breakpoints />
+            <FileOpen>True</FileOpen>
         </SourceFile>
         <SourceFile>
             <Name>sprite.asm</Name>
@@ -64,7 +73,7 @@
             <IncludeInBuild>True</IncludeInBuild>
             <Regions />
             <Breakpoints />
-            <FileOpen>False</FileOpen>
+            <FileOpen>True</FileOpen>
         </SourceFile>
         <SourceFile>
             <Name>Sprites.spt</Name>
@@ -80,7 +89,7 @@
             <IncludeInBuild>True</IncludeInBuild>
             <Regions />
             <Breakpoints />
-            <FileOpen>False</FileOpen>
+            <FileOpen>True</FileOpen>
         </SourceFile>
         <SourceFile>
             <Name>tables.asm</Name>
