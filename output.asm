@@ -1,28 +1,42 @@
+        ; screen output
+        ; available functions:
+        ; write_string
+        ; write_acc_value
 
 
-defm writev
-        lda #\3
-        ldx #\1
-        ldy #\2
-        jsr write_acc_value
-        endm
-
-defm writea
-        ldx #\1
-        ldy #\2
-        jsr write_acc_value
-        endm
-
-defm writem
-        lda \3
-        ldx #\1
-        ldy #\2
-        jsr write_acc_value
-        lda \3 + 1
-        ldx #\1 + 2
-        ldy #\2
-        jsr write_acc_value
-        endm
+        ; write string to screen
+        ; start with length, e.g. '\3' 'A' 'B' 'C'
+        ; 
+        ; x = x position, 0 to 39
+        ; y = y position, 0 to 24
+        ; $02-$03 = string address
+write_string
+        stx _write_str_4 + 1    ; store x position
+        lda screen_lo_tbl,y     ; get low part of screen addr
+        clc
+_write_str_4
+        adc #0                  ; add with x position
+        sta _write_str_1 + 1    ; store it at screen addr
+        lda #0                  ; calculate y hi addr
+        adc screen_hi_tbl,y     ; add with high part and carry to screen addr
+        sta _write_hex_2 + 1    ; store for later use
+        jsr get_screen_bank     ; get screen position in memory
+        clc                     ; clear carry
+_write_hex_2
+        adc #$00                ; add with high part of screen addr
+        sta _write_str_1 + 2    ; store it at low screen addr
+        ldy #0
+        lda ($02),y
+        tay
+        jmp _write_str_3
+_write_str_5
+        lda ($02),y
+        dey
+_write_str_1
+        sta $0100,y
+_write_str_3
+        bne _write_str_5
+        rts
 
 
         ; write acc as hex to screen
@@ -64,12 +78,14 @@ _write_hex_lo
         sta $0101,y             ; store it on the screen
         rts
 
+
      ; table for hex converter
 hex_tbl
         byte 48, 49, 50, 51
         byte 52, 53, 54, 55
         byte 56, 57, 01, 02
         byte 03, 04, 05, 06
+
 
         ; low part table of screen translation
         ; lo_addr = <(row * 40)
@@ -78,6 +94,7 @@ screen_lo_tbl
         byte 24, 64, 104, 144, 184, 224         ; 6
         byte 8, 48, 88, 128, 168, 208, 248      ; 7
         byte 32,72, 112, 162, 202               ; 5
+
 
         ; high part table of screen translation
         ; hi_addr = >(row * 40)

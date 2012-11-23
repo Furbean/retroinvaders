@@ -4,6 +4,14 @@
         BYTE $0B, $08, $0A, $00, $9E, $33, $32, $37, $36, $38, $00, $00, $00
 
         *=$8000
+        lda #<Message
+        sta $02
+        lda #>Message
+        sta $03
+        ldx #14
+        ldy #15
+        jsr write_string
+
         ; initialize the interrupt
         sei
 
@@ -58,3 +66,6 @@ _play_sequencer
         bne _play_sequencer
         jmp _reset_sequencer
 
+Message
+        byte 12
+        text 'hello world!'
