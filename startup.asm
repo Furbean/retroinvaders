@@ -4,6 +4,9 @@
         BYTE $0B, $08, $0A, $00, $9E, $33, $32, $37, $36, $38, $00, $00, $00
 
         *=$8000
+
+        jsr sound_it
+
         lda #<Message
         sta $02
         lda #>Message
