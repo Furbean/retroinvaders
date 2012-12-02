@@ -30,6 +30,14 @@
     <PaddingByte>234</PaddingByte>
     <SourceFiles>
         <SourceFile>
+            <Name>shield.cst</Name>
+            <FileType>6</FileType>
+            <IncludeInBuild>True</IncludeInBuild>
+            <Regions />
+            <Breakpoints />
+            <FileOpen>False</FileOpen>
+        </SourceFile>
+        <SourceFile>
             <Name>keyb.asm</Name>
             <FileType>2</FileType>
             <IncludeInBuild>True</IncludeInBuild>
