@@ -12,7 +12,7 @@
 
 
 ;$0801 - prg start
-;$08ff - macro start
+;$08ff - macro and contants start
 ;$0900 - program start
 ;$8000 - screen bank
 ;$8800 - char bank 1 - the whole bank for usage, contains game font

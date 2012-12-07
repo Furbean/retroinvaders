@@ -9,14 +9,14 @@ defm writev
         ldx #\1
         ldy #\2
         jsr write_acc_value
-        endm
+endm
 
 ; writea(x,y) write accumulator at x,y
 defm writea
         ldx #\1
         ldy #\2
         jsr write_acc_value
-        endm
+endm
 
 ; writem(x,y,mem) write memory value at x,y
 defm writem
@@ -28,19 +28,4 @@ defm writem
         ldx #\1 + 2
         ldy #\2
         jsr write_acc_value
-        endm
-
-
-;defm pascal_str
-;str_s
-;        *=*+1
-;str_1
-;        text \1
-;str_2
-;        *=str_s
-;        byte str_2-str_1
-;        *=str_2
-;        endm
-
-;        pascal_str 'hello world!'
-
+endm
