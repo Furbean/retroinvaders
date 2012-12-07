@@ -1,6 +1,6 @@
         ; all defined sprite
 
-        *=$2000
+        *=$9200
 
 ship_spr
  BYTE 0,0,0

@@ -1,5 +1,5 @@
 
-; Constants used by the engine
+; constants used for sprites
 shield_start_y = 200
 shield_start_1_x = 30
 shield_start_2_x = 80
@@ -32,7 +32,7 @@ interrupt
         bcc _shield_test_2
 
         ; carve some from first shield
-        ;carry set!!!
+        ; carry set!!!
         lda shot_ypos
         sbc #shield_start_y - shot_start_y
         tay

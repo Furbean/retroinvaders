@@ -1,7 +1,7 @@
 ; contains all lookup tables for quick access
 ; bit_set_tbl contains lookup for bit setting
 ; bit_clr_tbl contains lookup for bit clearing
-; bank_addr_tbl contains lookup for VICII bank address
+; bank_addr_tbl contains lookup for VIC-II bank address
 
 
 
