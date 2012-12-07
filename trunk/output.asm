@@ -1,8 +1,27 @@
         ; screen output
         ; available functions:
+        ; get_screen_addr
         ; write_string
         ; write_acc_value
 
+        ; calculate screen position
+        ; stored at $04-$05
+get_screen_addr
+        stx _get_screen_addr_1 + 1      ; store x position for later use
+        lda screen_lo_tbl,y             ; get low part of screen addr
+        clc
+_get_screen_addr_1
+        adc #0                          ; add x position
+        sta $04                         ; store it at low screen addr
+        lda #0
+        adc screen_hi_tbl,y             ; get high part of screen addr with carry
+        sta _get_screen_addr_2 + 1      ; store for later use
+        jsr get_screen_bank             ; get screen position in memory
+        clc
+_get_screen_addr_2
+        adc #$0                         ; add with high part of screen addr
+        sta $05
+        rts
 
         ; write string to screen
         ; start with length, e.g. '\3' 'A' 'B' 'C'
