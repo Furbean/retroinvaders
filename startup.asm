@@ -1,4 +1,6 @@
-        *=$9000
+; retroinvaders
+
+        *=$0900
 
         jsr sound_it
 

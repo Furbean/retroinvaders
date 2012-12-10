@@ -1,3 +1,5 @@
+; retroinvaders
+
 ; global contantants
 
         *=$08ff
@@ -24,7 +26,8 @@ irq_io$         = $dc00         ; CIA #1 IRQ io address
 nmi_io$         = $dd00         ; CIA #2 NMI io address
 
 
-color_ram$      = $d800        ; color ram address
+color_ram$      = $d800         ; color ram address
+screen_chars$   = 1000                        ; number of characters per screen
 
 
 rst_addr$       = $fffc         ; reset address
