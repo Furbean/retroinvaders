@@ -1,3 +1,5 @@
+; retroinvaders
+
 ; contains all lookup tables for quick access
 ; bit_set_tbl contains lookup for bit setting
 ; bit_clr_tbl contains lookup for bit clearing

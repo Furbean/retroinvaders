@@ -15,17 +15,17 @@
         <PostBuildCommands />
     </BuildEvents>
     <BuildList>
-        <FileName>memory_setup.asm</FileName>
         <FileName>basic.asm</FileName>
-        <FileName>macros.asm</FileName>
+        <FileName>memory_setup.asm</FileName>
         <FileName>constants.asm</FileName>
+        <FileName>macros.asm</FileName>
+        <FileName>membank.asm</FileName>
         <FileName>startup.asm</FileName>
         <FileName>keyb.asm</FileName>
-        <FileName>tables.asm</FileName>
-        <FileName>sprite.asm</FileName>
-        <FileName>membank.asm</FileName>
-        <FileName>sb.asm</FileName>
         <FileName>output.asm</FileName>
+        <FileName>sb.asm</FileName>
+        <FileName>sprite.asm</FileName>
+        <FileName>tables.asm</FileName>
         <FileName>sprite_data.asm</FileName>
     </BuildList>
     <DetermineBuildOrder>0</DetermineBuildOrder>
