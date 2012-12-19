@@ -17,9 +17,54 @@ ship_start_y = 230
 
 
 interrupt
+        pha
         sty _restore_y + 1
         stx _restore_x + 1
-        pha
+
+scan_line_irq$
+        jsr _interrupt_end ; to be overridden
+        inc irq_index
+        lda irq_index
+        asl
+_interrupt_2
+        tay
+        lda (irq_jump_tbl),y
+        sta scan_line_irq$ + 1
+        iny
+        lda (irq_jump_tbl),y
+        bne _interrupt_1
+        sta irq_index
+        jmp _interrupt_2
+_interrupt_1
+        sta scan_line_irq$ + 2
+        ldy irq_index   ; next scan line
+        lda (irq_scan_tbl),y
+        sta $d012
+        asl $d019       ; clear scan interrupt
+_restore_y
+        ldy #$00
+_restore_x
+        ldx #$00
+        pla
+        rti
+_interrupt_end
+        rts             ; safety address
+
+test_irq_2
+        lda #3
+        sta $d020
+        rts
+test_irq_3
+        lda #4
+        sta $d020
+        rts
+test_irq_4
+        lda #0
+        sta $d020
+        rts
+
+
+test_irq_1
         inc $d020
 
 
@@ -106,13 +151,7 @@ _skip_hit_test
         jsr move_shot
 
         dec $d020
-        asl $d019
-_restore_y
-        ldy #$00
-_restore_x
-        ldx #$00
-        pla
-        rti
+        rts
 
 
         ; initialize the sprites

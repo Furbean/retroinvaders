@@ -6,7 +6,7 @@
     <Target>2</Target>
     <Executable>retro1.prg</Executable>
     <StartAddress>2049</StartAddress>
-    <FilesGlobal>False</FilesGlobal>
+    <FilesGlobal>True</FilesGlobal>
     <BuildEvents>
         <PreBuildEnabled>False</PreBuildEnabled>
         <PostBuildEnabled>False</PostBuildEnabled>
@@ -19,14 +19,13 @@
         <FileName>constants.asm</FileName>
         <FileName>macros.asm</FileName>
         <FileName>startup.asm</FileName>
-        <FileName>memory_setup.asm</FileName>
-        <FileName>membank.asm</FileName>
         <FileName>keyb.asm</FileName>
+        <FileName>membank.asm</FileName>
         <FileName>output.asm</FileName>
         <FileName>sb.asm</FileName>
         <FileName>sprite.asm</FileName>
-        <FileName>tables.asm</FileName>
         <FileName>sprite_data.asm</FileName>
+        <FileName>tables.asm</FileName>
     </BuildList>
     <DetermineBuildOrder>0</DetermineBuildOrder>
     <PaddingByte>234</PaddingByte>
@@ -61,15 +60,15 @@
             <IncludeInBuild>True</IncludeInBuild>
             <Regions />
             <Breakpoints />
-            <FileOpen>True</FileOpen>
+            <FileOpen>False</FileOpen>
         </SourceFile>
         <SourceFile>
             <Name>memory_setup.asm</Name>
             <FileType>2</FileType>
-            <IncludeInBuild>True</IncludeInBuild>
+            <IncludeInBuild>False</IncludeInBuild>
             <Regions />
             <Breakpoints />
-            <FileOpen>True</FileOpen>
+            <FileOpen>False</FileOpen>
         </SourceFile>
         <SourceFile>
             <Name>output.asm</Name>
@@ -85,7 +84,7 @@
             <IncludeInBuild>True</IncludeInBuild>
             <Regions />
             <Breakpoints />
-            <FileOpen>True</FileOpen>
+            <FileOpen>False</FileOpen>
         </SourceFile>
         <SourceFile>
             <Name>shield.cst</Name>
@@ -101,7 +100,7 @@
             <IncludeInBuild>True</IncludeInBuild>
             <Regions />
             <Breakpoints />
-            <FileOpen>True</FileOpen>
+            <FileOpen>False</FileOpen>
         </SourceFile>
         <SourceFile>
             <Name>sprite_data.asm</Name>
@@ -109,7 +108,7 @@
             <IncludeInBuild>True</IncludeInBuild>
             <Regions />
             <Breakpoints />
-            <FileOpen>True</FileOpen>
+            <FileOpen>False</FileOpen>
         </SourceFile>
         <SourceFile>
             <Name>Sprites.spt</Name>
@@ -133,7 +132,7 @@
             <IncludeInBuild>True</IncludeInBuild>
             <Regions />
             <Breakpoints />
-            <FileOpen>True</FileOpen>
+            <FileOpen>False</FileOpen>
         </SourceFile>
         <SourceFile>
             <Name>tables.asm</Name>
