@@ -2,16 +2,8 @@
 
         *=$0900
 
-        jsr sound_it
-
-        lda #<message
-        sta $02
-        lda #>message
-        sta $03
-        ldx #14
-        ldy #15
-        jsr write_string
-
+        ; complete startup
+startup
         ; initialize the interrupt
         sei
 
@@ -50,7 +42,7 @@
         lda #$1b
         sta $d011
 
-        ; initialize irq jump table
+        ; finally initialize irq jump table
         init_irq test_jump, test_scan, 0
 
         cli
@@ -66,16 +58,8 @@ _play_sequencer
         jmp _reset_sequencer
 
 
-message
-        byte 12
-        text 'hello world!'
-
 test_jump
-        word test_irq_1
-        word test_irq_2
-        word test_irq_3
-        word test_irq_4
-        word 0
+        word test_irq_1,test_irq_2,test_irq_3,test_irq_4,0
 test_scan
         byte 50, 200, 210, 220, 230
 
