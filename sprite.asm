@@ -197,6 +197,7 @@ set_sprite_color
         sta $d027,x
         rts
 
+
         ; set all sprites to a color
         ; a = color, 0 to 15
 set_all_sprite_colors

@@ -25,6 +25,9 @@ get_vic_bank
 set_vic_bank
         and #$03
         sta $dd00
+        ;tax
+        ;lda bank_addr_tbl,x
+        ;sta vic_bank
         rts
 
 
@@ -44,6 +47,7 @@ get_screen_bank
         ; sets the screen bank, vic_bank + video_bank * $400
         ; a = 0 - 15
 set_screen_bank
+        and #$0f
         rol
         rol
         rol
@@ -72,6 +76,7 @@ get_char_bank
         ; sets the char bank, vic_bank + char_bank * $800
         ; a = 0 - 7
 set_char_bank
+        and #$07
         rol
         and #$0e
         sta _set_char_bank_1 + 1

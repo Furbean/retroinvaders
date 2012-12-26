@@ -1,11 +1,11 @@
 ; retroinvaders
 
-
         ; screen output
         ; available functions:
         ; get_screen_addr
         ; write_string
         ; write_acc_value
+
 
         ; calculate screen position
         ; stored at $04-$05
@@ -25,6 +25,7 @@ _get_screen_addr_2
         adc #$0                         ; add with high part of screen addr
         sta $05
         rts
+
 
         ; write string to screen
         ; start with length, e.g. '\3' 'A' 'B' 'C'

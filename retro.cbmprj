@@ -24,10 +24,10 @@
         <FileName>output.asm</FileName>
         <FileName>sb.asm</FileName>
         <FileName>sprite.asm</FileName>
-        <FileName>sprite_data.asm</FileName>
         <FileName>tables.asm</FileName>
+        <FileName>sprite_data.asm</FileName>
     </BuildList>
-    <DetermineBuildOrder>0</DetermineBuildOrder>
+    <DetermineBuildOrder>1</DetermineBuildOrder>
     <PaddingByte>234</PaddingByte>
     <SourceFiles>
         <SourceFile>
@@ -140,7 +140,7 @@
             <IncludeInBuild>True</IncludeInBuild>
             <Regions />
             <Breakpoints />
-            <FileOpen>True</FileOpen>
+            <FileOpen>False</FileOpen>
         </SourceFile>
     </SourceFiles>
 </Project>

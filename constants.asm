@@ -4,6 +4,7 @@
 
         *=$08fe
 
+
 ; zero page constants
 io_port        = $00
 io_bank        = $01
@@ -11,16 +12,19 @@ io_bank        = $01
 src_ptr        = $02;-03
 dst_ptr        = $04;-05
 
+
 ; contains high byte of the bank address
 vic_bank       = $f0
 screen_bank    = $f1
 char_bank      = $f2
 bitmap_bank    = $f3
 
+
 ; IRQ handling
 irq_jump_tbl   = $f4;-f5       ; irq jump table
 irq_scan_tbl   = $f6;-f7       ; irq scan line table
 irq_index      = $f8           ; current irq index
+
 
 ; IO addresses
 vic_io         = $d000         ; VIC-II io address
